@@ -1,0 +1,71 @@
+package practice;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class projectDemo {
+     public static void main(String[] args) throws IOException
+     {
+    	 System.out.println("*************************"
+    	 		          + "*************************LOCKED.ME"
+    	 		          + "****************************"
+    	 		          + "****************");
+    	 System.out.println(" ******-------Welcome-------******");
+    	 Scanner sc=new Scanner (System.in);
+    	 System.out.println ("Instructions :");
+    	 System.out.println("User name must contain 4letters and 3numbers");
+    	 System.out.println("password is 8 letters and contains 2 numbers and also starts with ur name");
+    	 System.out.println("Enter User Name :");
+    	 String str=sc.nextLine();
+    	 System.out.println("enter password :");
+    	 String str1=sc.nextLine();
+    	 System.out.println("username:" + str);
+    	 System.out.println("password :"+ str1);
+    	String correctusername="swap123";
+    	String correctpassword="swapna12";
+    	if(str.equals(correctusername)&&str1.equals(correctpassword))
+    	
+    	{
+    		System.out.println("valid  Details");
+    		System.out.println("Successfully logged in");
+    		System.out.println("Welcome to Menu :");
+        while(true)
+    	{
+    		
+    	
+    	 System.out.print("Enter Option : ");
+    	 System.out.println("1.Add \n  2.Delete  \n  3. Search \n 4.Back ");
+    	 int a=sc.nextInt();
+    	 switch(a)
+    	 {
+    	 case 1:
+    	 System.out.println("Add a file");
+    	 Obj.add();
+    	 break;
+    	 case 2:
+    	 System.out.println("Delete a file");
+    	 Obj.Delete();
+         break; 
+    	 case 3:
+         System.out.println("Search a file");
+         Obj.search();
+         break; 
+    	 case 4:
+         System.out.println("back");
+    	 }
+    	 System.out.println("enter c to continue, e to exit");
+		    String c=sc.next();
+		    if(c.equals("n"))
+		    {
+		    	break;
+		    }
+		  
+    	 }
+    	}
+    	
+    	else
+    		System.out.println("invalid details");
+		    
+     }
+     
+}
