@@ -1,0 +1,78 @@
+package com.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
+public class Progress {
+
+	@Id
+	private int id_num;
+	private String classes;
+	private int students;
+	private int subjects;
+	private int teachers;
+	
+	public Progress() {
+	
+	}
+
+	public int getId_num() {
+		return id_num;
+	}
+
+	public void setId_num(int id_num) {
+		this.id_num = id_num;
+	}
+
+	public String getClasses() {
+		return classes;
+	}
+
+	public void setClasses(String classes) {
+		this.classes = classes;
+	}
+
+	public int getStudents() {
+		return students;
+	}
+
+	public void setStudents(int students) {
+		this.students = students;
+	}
+
+	public int getSubjects() {
+		return subjects;
+	}
+
+	public void setSubjects(int subjects) {
+		this.subjects = subjects;
+	}
+
+	public int getTeachers() {
+		return teachers;
+	}
+
+	public void setTeachers(int teachers) {
+		this.teachers = teachers;
+	}
+
+	@Override
+	public String toString() {
+		return "Progress [id_num=" + id_num + ", classes=" + classes + ", students=" + students + ", subjects="
+				+ subjects + ", teachers=" + teachers + "]";
+	}
+
+	public Progress(int id_num, String classes, int students, int subjects, int teachers) {
+		super();
+		this.id_num = id_num;
+		this.classes = classes;
+		this.students = students;
+		this.subjects = subjects;
+		this.teachers = teachers;
+	}
+	
+	
+}

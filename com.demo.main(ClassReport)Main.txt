@@ -1,0 +1,36 @@
+package com.demo.main;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+
+import com.demo.model.Progress;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Configuration configuration=new Configuration().configure();
+		StandardServiceRegistryBuilder builder=new StandardServiceRegistryBuilder()
+				.applySettings(configuration.getProperties());
+		SessionFactory factory=configuration.buildSessionFactory(builder.build());
+	    Session session=factory.openSession();
+	    Transaction transaction=session.beginTransaction();
+	    Progress p1=new Progress(1,"tenth",11,6,6);
+	    session.save(p1);
+	    Progress p2=new Progress(2,"eigth",7,6,6);
+	    session.save(p2);
+	    Progress p3=new Progress(3,"seventh",5,6,6);
+	    session.save(p3);
+	    Progress p4=new Progress(4,"sixth",2,6,6);
+	    session.save(p4);
+	  
+		transaction.commit();
+		session.close();
+		
+	  factory.close();
+	  
+	}
+
+}

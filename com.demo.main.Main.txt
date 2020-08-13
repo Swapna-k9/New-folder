@@ -1,0 +1,92 @@
+package com.demo.main;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+
+import com.demo.model.Students;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Configuration configuration=new Configuration().configure();
+		StandardServiceRegistryBuilder builder=new StandardServiceRegistryBuilder()
+				.applySettings(configuration.getProperties());
+		SessionFactory factory=configuration.buildSessionFactory(builder.build());
+		Session session=factory.openSession();
+		Transaction transaction=session.beginTransaction();
+	    
+		Students s1=new Students(101,"swapna","tenth","english","vinay");
+		session.save(s1);
+		Students s2=new Students(102,"kokila","tenth","telugu","vikram");
+		session.save(s2);
+		Students s3=new Students(103,"sahithi","tenth","hindi","naveen");
+		session.save(s3);
+		Students s4=new Students(104,"divya","tenth","maths","kavitha");
+		session.save(s4);
+		Students s5=new Students(105,"vijay","tenth","english","vinay");
+		session.save(s5);
+		Students s6=new Students(106,"jyoti","tenth","english","vinay");
+		session.save(s6);
+		Students s7=new Students(107,"p.sudha","tenth","science","surekha");
+		session.save(s7);
+		Students s8=new Students(108,"sruti","tenth","maths","kavitha");
+		session.save(s8);
+		Students s9=new Students(109,"s.divya","tenth","telugu","vikram");
+		session.save(s9);
+		Students s10=new Students(110,"sravanthi","tenth","hindi","naveen");
+		session.save(s10);
+		Students s11=new Students(111,"anurag","tenth","hindi","naveen");
+		session.save(s11);
+		Students s12=new Students(112,"pallavi","eigth","telugu","vikram");
+		session.save(s12);
+		Students s13=new Students(113,"ramesh","eigth","telugu","vikram");
+		session.save(s13);
+		Students s14=new Students(114,"prashath","eigth","science","surekha");
+		session.save(s14);
+		Students s15=new Students(115,"p.divya","eigth","science","surekha");
+		session.save(s15);
+		Students s16=new Students(116,"prerna","eigth","english","vinay");
+		session.save(s16);
+		Students s17=new Students(117,"saikiran","eigth","maths","kavitha");
+		session.save(s17);
+		Students s18=new Students(118,"pardha","eigth","hindi","naveen");
+		session.save(s18);
+		Students s19=new Students(119,"mukesh","seventh","science","surekha");
+		session.save(s19);
+		Students s20=new Students(120,"bharadwaj","seventh","telugu","kavitha");
+		session.save(s20);
+		Students s21=new Students(121,"bharath","seventh","hindi","naveen");
+		session.save(s21);
+		Students s22=new Students(122,"sathish","seventh","telugu","kavitha");
+		session.save(s22);
+		Students s23=new Students(123,"krishna","seventh","telugu","kavitha");
+		session.save(s23);
+		Students s24=new Students(124,"kushboo","sixth","hindi","naveen");
+		session.save(s24);
+		Students s25=new Students(125,"prabhas","sixth","science","surekha");
+		session.save(s25);
+		
+		//displaying the data by id
+		//Students s5=(Students) session.get(Students.class, 105);
+		
+		//updating the data in the table
+	 //	System.out.println(s5);
+		//Students s3=new Students(103,"suman","tenth","hindi","naveen");
+	 //	session.update(s3);
+		
+		//Deleting data using id
+		//Students s=new Students();
+		//s.setStudent_id(108);
+		//session.delete(s);
+		transaction.commit();
+		session.close();
+		factory.close();
+	
+	
+	
+	}
+
+}
